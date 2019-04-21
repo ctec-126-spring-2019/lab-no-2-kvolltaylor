@@ -16,6 +16,9 @@
             <div class="col-12">
                 <h1>Lab 2 - Problem 2</h1>
                 <button type="button" class="btn btn-success" onclick="startThings()">START</button>
+                <!-- error message for invalid numbers will display here -->
+                <div id="errorMsg" class="mt-5"></div>
+                <!-- roman numeral equivalent to arabic number will display here -->
                 <div id="output" class="mt-5"></div>
             </div>
         </div>
@@ -33,7 +36,54 @@
         // be sure to assign the roman numeral to the variable romanNumeral
         // it will be used to display it on the web page using the code below
 
+        let userInput = prompt('Please enter a number from 1 to 10');
 
+        // switch case 
+        switch (userInput){
+            case "1":
+            romanNumeral = "I";
+            break;
+            case "2":
+            romanNumeral = "II";
+            break;
+            case "3":
+            romanNumeral = "III";
+            break;
+            case "4":
+            romanNumeral = "IV";
+            break;
+            case "5":
+            romanNumeral = "V";
+            break;
+            case "6":
+            romanNumeral = "VI";
+            break;
+            case "7":
+            romanNumeral = "VII";
+            break;
+            case "8":
+            romanNumeral = "VIII";
+            break;
+            case "9":
+            romanNumeral = "IX";
+            break;
+            case "10":
+            romanNumeral = "X";
+            break;
+            default:
+            romanNumeral = "";
+        }
+
+
+
+        // error message if user enters an invalid number
+        if (romanNumeral === ""){
+            let errorMsg = document.getElementById('errorMsg');
+            errorMsg.innerHTML = "<div class='alert alert-danger'>That is not a valid entry. Try again.</div>";
+        } else {
+            let errorMsg = document.getElementById('errorMsg');
+            errorMsg.innerHTML = ""; 
+        }
 
         // do not modify start
         let outputDiv = document.getElementById('output');
